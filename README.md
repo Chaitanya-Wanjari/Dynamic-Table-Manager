@@ -101,3 +101,7 @@ UI Highlights
 3) Smooth fade/slide transitions across components
 
 4) Accessible and keyboard-friendly table navigation
+
+## 🌐 Live Demo
+https://dynamic-table-manager-4fizsqmey.vercel.app
+
