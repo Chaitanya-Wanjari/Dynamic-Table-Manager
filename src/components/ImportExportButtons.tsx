@@ -64,7 +64,15 @@ export default function ImportExportButtons() {
       </Stack>
 
       <Snackbar open={!!snack} autoHideDuration={3500} onClose={() => setSnack(null)}>
-        {snack && <Alert onClose={() => setSnack(null)} severity={snack.severity} sx={{ width: "100%" }}>{snack.msg}</Alert>}
+        {snack ? (
+    <Alert
+      onClose={() => setSnack(null)}
+      severity={snack.severity}
+      sx={{ width: "100%" }}
+    >
+      {snack.msg}
+    </Alert>
+  ) : undefined}
       </Snackbar>
     </>
   );
