@@ -49,8 +49,14 @@ export function importCSV(
       complete: (results) => {
         const { data, errors } = results;
         const validData = Array.isArray(data)
-          ? data.filter((row) => Object.keys(row).length > 0)
-          : [];
+  ? data.filter(
+      (row): row is Record<string, unknown> =>
+        typeof row === "object" &&
+        row !== null &&
+        Object.keys(row as Record<string, unknown>).length > 0
+    )
+  : [];
+
         resolve({ data: validData, errors });
       },
       error: (err) => reject(err),
